@@ -446,6 +446,15 @@ def crontab(month='*', day='*', day_of_week='*', hour='*', minute='*'):
     */n = run every "n" times, i.e. hours='*/4' == 0, 4, 8, 12, 16, 20
     m-n = run every time m..n
     m,n = run on m and n
+    
+    Example how to run a task once every day at midnight::
+    
+         crontab(hour=0, minute=0)
+         
+    Example how to run a task once every hour when the hour changes::
+    
+         crontab(minute=0)
+         
     """
     validation = (
         ('m', month, range(1, 13)),
